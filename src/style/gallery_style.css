@@ -1,0 +1,272 @@
+/* Importing base styles from homepage */
+@import url("homepage_style.css");
+
+/* Gallery Specific Styles */
+
+/* Header styling */
+header {
+  background-color: #121212;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #fff;
+}
+
+/* Gallery intro section */
+.gallery-intro {
+  background-color: #f9f9f9;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.intro-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gallery-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-intro p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Gallery categories */
+.gallery-categories {
+  padding: 2rem;
+  text-align: center;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.category-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background-color: #121212;
+  color: #fff;
+  border-color: #121212;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  padding: 0 2rem 4rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  height: 300px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay-content h3 {
+  color: #fff;
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+}
+
+.overlay-content p {
+  color: #ccc;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Footer styles - import from homepage_style.css and add these specifics */
+footer {
+  background-color: #121212;
+  color: #888;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links h4 {
+  color: #888;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.footer-links h4:hover {
+  color: #fff;
+}
+
+.footer-center {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 0;
+}
+
+.social-icons a {
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.copyright {
+  margin-left: 20px;
+  font-size: 0.8rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  nav ul {
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 0.5rem;
+  }
+  
+  .gallery-intro h2 {
+    font-size: 2rem;
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-buttons {
+    flex-direction: column;
+    max-width: 200px;
+    margin: 0 auto 1.5rem;
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Services | Servicios de Belleza</title>
+    <link rel="stylesheet" href="../style/services_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header-nav">
+        <div class="nav-container">
+            <h1>R&R Beauty Salon</h1>
+            <nav class="nav-links">
+                <a href="Homepage.html" class="home-link">Home</a>
+                <a href="Gallery.html">Gallery</a>
+                <a href="Services.html" class="active">Services</a>
+                <a href="About.html">About Us</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Beauty Services</h1>
+                <h2>Servicios de Belleza</h2>
+                <p>Professional beauty treatments to enhance your natural beauty and boost your confidence</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-service="threading">
+                    <div class="service-icon">✨</div>
+                    <div class="service-title">Threading</div>
+                    <div class="service-title-spanish">Depilación con hilo</div>
+                    <div class="service-description">Precise eyebrow shaping and unwanted hair removal using the ancient threading technique for clean, defined results.</div>
+                </div>
+
+                <div class="service-card" data-service="eyelashes">
+                    <div class="service-icon">👁️</div>
+                    <div class="service-title">Eyelashes</div>
+                    <div class="service-title-spanish">Pestañas</div>
+                    <div class="service-description">Professional eyelash treatments including extensions, tinting, and styling to enhance your natural lashes.</div>
+                </div>
+
+                <div class="service-card" data-service="waxing">
+                    <div class="service-icon">🕯️</div>
+                    <div class="service-title">Waxing</div>
+                    <div class="service-title-spanish">Cera</div>
+                    <div class="service-description">Smooth, long-lasting hair removal using premium wax for face and body areas with minimal discomfort.</div>
+                </div>
+
+                <div class="service-card" data-service="tints">
+                    <div class="service-icon">🎨</div>
+                    <div class="service-title">Tints</div>
+                    <div class="service-title-spanish">Tintes</div>
+                    <div class="service-description">Eyebrow and eyelash tinting services to add color and definition, creating a naturally enhanced look.</div>
+                </div>
+
+                <div class="service-card" data-service="facial">
+                    <div class="service-icon">✨</div>
+                    <div class="service-title">Facial</div>
+                    <div class="service-title-spanish">Facial</div>
+                    <div class="service-description">Rejuvenating facial treatments customized to your skin type for deep cleansing, hydration, and radiant skin.</div>
+                </div>
+
+                <div class="service-card" data-service="massage">
+                    <div class="service-icon">🤲</div>
+                    <div class="service-title">Massage</div>
+                    <div class="service-title-spanish">Masaje</div>
+                    <div class="service-description">Relaxing therapeutic massage treatments to relieve tension, improve circulation, and promote overall wellness.</div>
+                </div>
+
+                <div class="service-card" data-service="lash-lift">
+                    <div class="service-icon">👁️</div>
+                    <div class="service-title">Eyelash Lift</div>
+                    <div class="service-title-spanish">Levantamiento de pestañas</div>
+                    <div class="service-description">Semi-permanent lash lifting treatment that curls and lifts your natural lashes for a wide-eyed, youthful appearance.</div>
+                </div>
+
+                <div class="service-card" data-service="nose-hair">
+                    <div class="service-icon">👃</div>
+                    <div class="service-title">Nose Hair Removal</div>
+                    <div class="service-title-spanish">Depilación de la nariz</div>
+                    <div class="service-description">Gentle and hygienic removal of unwanted nose hair using safe, professional techniques for a clean, groomed look.</div>
+                </div>
+
+                <div class="service-card" data-service="blackheads">
+                    <div class="service-icon">🌟</div>
+                    <div class="service-title">Nose Blackheads</div>
+                    <div class="service-title-spanish">Espinilla de la nariz</div>
+                    <div class="service-description">Professional blackhead extraction and pore cleansing treatment for the nose area, leaving skin smooth and clear.</div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3>Ready to Book Your Appointment?</h3>
+                <p>Contact us today to schedule your personalized beauty treatment</p>
+                <button class="cta-button" id="bookButton">Book Now / Reservar Ahora</button>
+            </div>
+        </div>
+
+        <!-- Modal for booking -->
+        <div id="bookingModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Book Your Appointment</h3>
+                <p>Please call us at <strong>(555) 123-4567</strong> or email <strong>info@beautysalon.com</strong> to schedule your appointment.</p>
+                <p><em>Llámanos al (555) 123-4567 o envía un email a info@beautysalon.com para programar tu cita.</em></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="Homepage.html"><h4>HOME</h4></a>
+                <a href="Gallery.html"><h4>GALLERY</h4></a>
+                <a href="Contact.html"><h4>CONTACT DETAILS</h4></a>
+                <a href="Services.html"><h4>SERVICES</h4></a>
+                <a href="About.html"><h4>ABOUT US</h4></a>
+            </div>
+            <div class="footer-center">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/R-R-Beauty-Salon/61573751265645/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 R&R Beauty Salon</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/services.js"></script>
+</body>
+</html>

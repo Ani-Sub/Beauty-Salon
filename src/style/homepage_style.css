@@ -1,0 +1,639 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Utility Classes */
+.btn {
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin: 0 8px;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn.outline {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.btn.outline:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Section Styling */
+section {
+  padding: 3rem 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #f5e6f8 0%, #e8d5f2 25%, #f0e6f7 50%, #faf0fd 75%, #f8f0fa 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 192, 203, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(221, 160, 221, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(230, 230, 250, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.hero-content {
+  z-index: 2;
+  width: 100%;
+  position: relative;
+}
+
+.hero h1 {
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+  font-size: 3.5rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  color: #6a6a6a;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Add this to your homepage_style.css file */
+a.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* This ensures consistent sizing with the other buttons */
+.nav-buttons a.btn {
+  display: inline-block;
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.fade-in:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+  color: #888;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links h4 {
+  color: #bbb;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.footer-links h4:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.footer-center {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 0;
+}
+
+.social-icons a {
+  color: #888;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.copyright {
+  margin-left: 20px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .btn {
+    width: 100%;
+    margin: 5px 0;
+    max-width: 200px;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .copyright {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+  }
+  
+  .footer-links {
+    gap: 10px;
+  }
+  
+  .footer-links h4 {
+    font-size: 0.7rem;
+  }
+}/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Utility Classes */
+.btn {
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin: 0 8px;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn.outline {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.btn.outline:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Section Styling */
+section {
+  padding: 3rem 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #f5e6f8 0%, #e8d5f2 25%, #f0e6f7 50%, #faf0fd 75%, #f8f0fa 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 192, 203, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(221, 160, 221, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(230, 230, 250, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.hero-content {
+  z-index: 2;
+  width: 100%;
+  position: relative;
+}
+
+.hero h1 {
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+  font-size: 3.5rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  color: #6a6a6a;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Add this to your homepage_style.css file */
+a.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* This ensures consistent sizing with the other buttons */
+.nav-buttons a.btn {
+  display: inline-block;
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.fade-in:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+  color: #888;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links h4 {
+  color: #bbb;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.footer-links h4:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.footer-center {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 0;
+}
+
+.social-icons a {
+  color: #888;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.copyright {
+  margin-left: 20px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .btn {
+    width: 100%;
+    margin: 5px 0;
+    max-width: 200px;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .copyright {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+  }
+  
+  .footer-links {
+    gap: 10px;
+  }
+  
+  .footer-links h4 {
+    font-size: 0.7rem;
+  }
+}
