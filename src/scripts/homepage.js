@@ -33,17 +33,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Footer link interactions
-    const footerLinks = document.querySelectorAll('.footer-links h4');
+    // Footer link interactions - Updated to work with anchor tags
+    const footerLinks = document.querySelectorAll('.footer-links a');
     footerLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
-            this.style.color = '#fff';
-            this.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
+            const h4 = this.querySelector('h4');
+            if (h4) {
+                h4.style.color = '#fff';
+                h4.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
+            }
         });
         
         link.addEventListener('mouseleave', function() {
-            this.style.color = '#bbb';
-            this.style.textShadow = 'none';
+            const h4 = this.querySelector('h4');
+            if (h4) {
+                h4.style.color = '#bbb';
+                h4.style.textShadow = 'none';
+            }
+        });
+
+        // Add click handler with fade effect
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            
+            // Add fade out effect before navigation
+            document.body.style.opacity = '0.8';
+            document.body.style.transition = 'opacity 0.3s ease';
+            
+            setTimeout(() => {
+                window.location.href = href;
+            }, 200);
         });
     });
 
@@ -144,17 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('R&R Beauty Salon - Homepage loaded successfully!');
     console.log('For support, contact: info@rrbeautysalon.com');
 });
-
-// Navigation function for footer links
-function navigateTo(page) {
-    // Add fade out effect before navigation
-    document.body.style.opacity = '0.8';
-    document.body.style.transition = 'opacity 0.3s ease';
-    
-    setTimeout(() => {
-        window.location.href = page;
-    }, 200);
-}
 
 // Utility function to check if element is in viewport
 function isInViewport(element) {
