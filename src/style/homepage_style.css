@@ -56,7 +56,7 @@ h4 {
 .btn {
   padding: 14px 28px;
   background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  color: #4a2b4a;
   border: 2px solid rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
@@ -75,6 +75,7 @@ h4 {
   border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: #2d1537;
 }
 
 .btn.outline {
@@ -105,9 +106,11 @@ section {
   justify-content: center;
   text-align: center;
   position: relative;
-  background: linear-gradient(135deg, #f5e6f8 0%, #e8d5f2 25%, #f0e6f7 50%, #faf0fd 75%, #f8f0fa 100%);
+  background: linear-gradient(135deg, #f3d4ff 0%, #e5b8f9 25%, #ecc6ff 50%, #ffd4ff 75%, #f9d4f4 100%);
   background-size: 400% 400%;
   animation: gradientShift 8s ease-in-out infinite;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
 
 @keyframes gradientShift {
@@ -127,9 +130,22 @@ section {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 192, 203, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(221, 160, 221, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(230, 230, 250, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(255, 192, 203, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(221, 160, 221, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 40% 60%, rgba(230, 230, 250, 0.15) 0%, transparent 35%);
+  animation: floatingShapes 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0c16.569 0 30 13.431 30 30S46.569 60 30 60 0 46.569 0 30 13.431 0 30 0zm0 8c12.15 0 22 9.85 22 22s-9.85 22-22 22S8 42.15 8 30 17.85 8 30 8z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.7;
   pointer-events: none;
 }
 
@@ -151,7 +167,7 @@ section {
 
 .hero h1 {
   font-family: 'Playfair Display', Georgia, serif;
-  color: #4a4a4a;
+  color: #2d1537;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
   font-size: 4rem;
@@ -162,7 +178,7 @@ section {
 
 .tagline {
   font-family: 'Dancing Script', cursive;
-  color: #6a6a6a;
+  color: #663366;
   font-size: 1.8rem;
   margin-bottom: 2.5rem;
   font-weight: 500;
@@ -344,5 +360,17 @@ footer {
   
   .footer-links h4 {
     font-size: 0.75rem;
+  }
+}
+
+/* Add the floating shapes animation */
+@keyframes floatingShapes {
+  0%, 100% { 
+    transform: translateY(0) scale(1); 
+    opacity: 0.15;
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.1); 
+    opacity: 0.25;
   }
 }
