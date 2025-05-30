@@ -6,6 +6,19 @@ function sanitizeInput(input) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Add navigation link active state functionality
+    const currentPage = window.location.pathname.split('/').pop();
+    const navigationLinks = document.querySelectorAll('.nav-links a, .footer-links a');
+    
+    navigationLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'Contact.html' && linkPage === 'Contact.html')) {
+            link.classList.add('active');
+        }
+    });
+
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -112,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add mobile menu toggle functionality
     const navContainer = document.querySelector('.nav-container');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileNavLinks = document.querySelector('.nav-links');
     
     // Create mobile menu button
     const mobileMenuBtn = document.createElement('button');
@@ -121,12 +134,12 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenuBtn.style.display = 'none';
 
     // Insert the button after the h1 in the nav container
-    navContainer.insertBefore(mobileMenuBtn, navLinks);
+    navContainer.insertBefore(mobileMenuBtn, mobileNavLinks);
 
     // Toggle mobile menu
     mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-        mobileMenuBtn.innerHTML = navLinks.classList.contains('show') 
+        mobileNavLinks.classList.toggle('show');
+        mobileMenuBtn.innerHTML = mobileNavLinks.classList.contains('show') 
             ? '<i class="fas fa-times"></i>' 
             : '<i class="fas fa-bars"></i>';
     });
@@ -135,10 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleMobileMenu() {
         if (window.innerWidth <= 768) {
             mobileMenuBtn.style.display = 'block';
-            navLinks.classList.remove('show');
+            mobileNavLinks.classList.remove('show');
         } else {
             mobileMenuBtn.style.display = 'none';
-            navLinks.classList.remove('show');
+            mobileNavLinks.classList.remove('show');
         }
     }
 

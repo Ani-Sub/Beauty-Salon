@@ -114,11 +114,13 @@ h1, h2, h3, h4 {
     margin: 0;
     font-weight: 600;
     font-family: 'Dancing Script', cursive;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .nav-links {
     display: flex;
     gap: 30px;
+    animation: slideInFromLeft 0.8s ease-out;
 }
 
 .nav-links a {
@@ -128,12 +130,13 @@ h1, h2, h3, h4 {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: #F5F6F0;
+    transform: translateY(-2px);
 }
 
 .nav-links a.active {

@@ -11,150 +11,132 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Header Navigation -->
+    <header class="header-nav">
         <div class="header-container">
-            <div class="logo">
-                <h1>R&R Beauty Salon</h1>
-            </div>
+            <h1>R&R Beauty Salon</h1>
             <nav>
-                <ul>
-                    <li><a href="Homepage.html" class="active">Home</a></li>
+                <ul class="nav-links">
+                    <li><a href="Homepage.html">Home</a></li>
                     <li><a href="Gallery.html" class="active">Gallery</a></li>
-                    <li><a href="Services.html" class="active">Services</a></li>
-                    <li><a href="About.html" class="active">About Us</a></li>
-                    <li><a href="Contact.html" class="active">Contact</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Gallery Intro -->
-    <section class="gallery-intro">
-        <div class="intro-container">
-            <h2>Our Work</h2>
-            <p>Explore our portfolio of beautiful transformations and salon experiences</p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Gallery Intro -->
+        <section class="gallery-intro">
+            <div class="intro-container">
+                <h2>Our Work</h2>
+                <p>Explore our portfolio of beautiful transformations and professional beauty services</p>
+            </div>
+        </section>
 
-    <!-- Gallery Categories -->
-    <section class="gallery-categories">
-        <div class="category-buttons">
-            <button class="category-btn active" data-category="all">All</button>
-            <button class="category-btn" data-category="hair">Hair</button>
-            <button class="category-btn" data-category="makeup">Makeup</button>
-            <button class="category-btn" data-category="nails">Nails</button>
-            <button class="category-btn" data-category="salon">Salon</button>
-        </div>
-    </section>
+        <!-- Gallery Categories -->
+        <section class="gallery-categories">
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="threading">Threading</button>
+                <button class="category-btn" data-category="waxing">Waxing</button>
+                <button class="category-btn" data-category="eyelashes">Lash & Brow</button>
+                <button class="category-btn" data-category="nose">Nose Care</button>
+            </div>
+        </section>
 
-    <!-- Gallery Grid -->
-    <section class="gallery-grid">
-        <div class="grid-container">
-            <!-- Hair Gallery Items -->
-            <div class="gallery-item hair">
-                <img src="/api/placeholder/400/400" alt="Hair styling example 1">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Elegant Updo</h3>
-                        <p>Special occasion styling</p>
+        <!-- Gallery Grid -->
+        <section class="gallery-grid">
+            <div class="grid-container">
+                <!-- Threading Gallery Items -->
+                <div class="gallery-item threading">
+                    <img src="../pictures/service_pic/eyebrow_thread.jpg" alt="Eyebrow threading technique">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Perfect Brows</h3>
+                            <p>Precise threading technique</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item threading">
+                    <img src="../pictures/service_pic/eyebrow.png" alt="Eyebrow threading result">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Natural Definition</h3>
+                            <p>Clean, defined results</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Waxing Gallery Items -->
+                <div class="gallery-item waxing">
+                    <img src="../pictures/service_pic/wax.jpg" alt="Waxing service - Before">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Before Treatment</h3>
+                            <p>Area before professional waxing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item waxing">
+                    <img src="../pictures/service_pic/wax2.jpg" alt="Waxing service - After">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>After Treatment</h3>
+                            <p>Smooth, hair-free results after waxing</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Eyelashes Gallery Items -->
+                <div class="gallery-item eyelashes">
+                    <img src="../pictures/service_pic/Eyebrow_lamination.jpg" alt="Eyelash and brow lamination">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Lash & Brow Lamination</h3>
+                            <p>Enhanced natural look</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nose Care Services -->
+                <div class="gallery-item nose">
+                    <img src="../pictures/service_pic/nose_hair.jpg" alt="Nose hair removal - Before">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Before Treatment</h3>
+                            <p>Nose hair before professional removal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item nose">
+                    <img src="../pictures/service_pic/nose_hair2.jpg" alt="Nose hair removal - After">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>After Treatment</h3>
+                            <p>Clean and neat result after removal</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="gallery-item hair">
-                <img src="/api/placeholder/400/400" alt="Hair styling example 2">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Color Transformation</h3>
-                        <p>Balayage highlights</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-item hair">
-                <img src="/api/placeholder/400/400" alt="Hair styling example 3">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Modern Bob</h3>
-                        <p>Precision cutting</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Makeup Gallery Items -->
-            <div class="gallery-item makeup">
-                <img src="/api/placeholder/400/400" alt="Makeup example 1">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Bridal Makeup</h3>
-                        <p>Elegant and timeless</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-item makeup">
-                <img src="/api/placeholder/400/400" alt="Makeup example 2">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Evening Glam</h3>
-                        <p>Dramatic and bold</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Nails Gallery Items -->
-            <div class="gallery-item nails">
-                <img src="/api/placeholder/400/400" alt="Nails example 1">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>French Manicure</h3>
-                        <p>Classic elegance</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-item nails">
-                <img src="/api/placeholder/400/400" alt="Nails example 2">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Nail Art</h3>
-                        <p>Creative designs</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Salon Gallery Items -->
-            <div class="gallery-item salon">
-                <img src="/api/placeholder/400/400" alt="Salon interior 1">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Salon Interior</h3>
-                        <p>Modern and inviting</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-item salon">
-                <img src="/api/placeholder/400/400" alt="Salon interior 2">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <h3>Styling Station</h3>
-                        <p>Professional equipment</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
     
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-links">
-                <h4>EMPLOYMENT OPPORTUNITIES</h4>
-                <h4>CONTACT DETAILS</h4>
-                <h4>SERVICES</h4>
-                <h4>ABOUT US</h4>
+                <a href="Homepage.html"><h4>HOME</h4></a>
+                <a href="Gallery.html"><h4>GALLERY</h4></a>
+                <a href="Services.html"><h4>SERVICES</h4></a>
+                <a href="About.html"><h4>ABOUT US</h4></a>
+                <a href="Contact.html"><h4>CONTACT</h4></a>
             </div>
             <div class="footer-center">
                 <div class="social-icons">
