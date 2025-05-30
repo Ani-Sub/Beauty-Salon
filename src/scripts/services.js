@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add mouse enter effect
         card.addEventListener('mouseenter', function() {
-            this.style.borderLeft = '5px solid #e74c3c';
+            this.style.borderLeft = '5px solid #9CAF88';
         });
         
         // Add mouse leave effect
@@ -85,24 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe all service cards
     serviceCards.forEach(card => {
         observer.observe(card);
-    });
-    
-    // Header animation on scroll
-    let lastScrollTop = 0;
-    const header = document.querySelector('.page-header'); // Updated selector
-    
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 100) {
-            header.style.transform = 'translateY(-10px)';
-            header.style.boxShadow = '0 15px 40px rgba(0,0,0,0.15)';
-        } else {
-            header.style.transform = 'translateY(0)';
-            header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-        }
-        
-        lastScrollTop = scrollTop;
     });
     
     // Add loading animation
