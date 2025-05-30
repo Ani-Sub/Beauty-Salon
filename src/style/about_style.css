@@ -360,7 +360,7 @@ footer {
     }
 }
 
-/* Responsive Design */
+/* About-specific responsive styles */
 @media (max-width: 992px) {
     .story-text {
         grid-template-columns: 1fr;
