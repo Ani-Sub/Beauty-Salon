@@ -129,6 +129,8 @@ section {
   margin-bottom: 20px;
   font-family: 'Dancing Script', cursive;
   animation: fadeIn 1s ease-out;
+  color: #F5F6F0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tagline {
