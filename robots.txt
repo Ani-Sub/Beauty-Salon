@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://[your-username].github.io/Beauty-Salon/sitemap.xml
+Sitemap: https://Ani-Sub.github.io/Beauty-Salon/sitemap.xml
 
 # Prevent caching of assets
 User-agent: *

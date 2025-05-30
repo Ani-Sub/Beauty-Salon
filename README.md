@@ -3,7 +3,7 @@
 A professional website for R&R Beauty Salon, featuring services, gallery, about us, and contact information.
 
 ## Live Website
-Visit our website at: https://[your-username].github.io/Beauty-Salon/
+Visit our website at: https://Ani-Sub.github.io/Beauty-Salon/
 
 ## Features
 - Responsive design for all devices
@@ -15,7 +15,7 @@ Visit our website at: https://[your-username].github.io/Beauty-Salon/
 ## Local Development
 1. Clone the repository:
 ```bash
-git clone https://github.com/[your-username]/Beauty-Salon.git
+git clone https://github.com/Ani-Sub/Beauty-Salon.git
 cd Beauty-Salon
 ```
 
@@ -30,7 +30,7 @@ The website is automatically deployed to GitHub Pages when changes are pushed to
 1. Go to your repository settings
 2. Navigate to "Pages" under "Code and automation"
 3. Select the "gh-pages" branch as the source
-4. Your site will be published at https://[your-username].github.io/Beauty-Salon/
+4. Your site will be published at https://Ani-Sub.github.io/Beauty-Salon/
 
 ## Maintenance
 ### Regular Updates
