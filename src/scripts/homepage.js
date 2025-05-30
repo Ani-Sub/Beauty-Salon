@@ -33,37 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Footer link interactions - Updated to work with anchor tags
-    const footerLinks = document.querySelectorAll('.footer-links a');
-    footerLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            const h4 = this.querySelector('h4');
-            if (h4) {
-                h4.style.color = '#fff';
-                h4.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
-            }
-        });
-        
-        link.addEventListener('mouseleave', function() {
-            const h4 = this.querySelector('h4');
-            if (h4) {
-                h4.style.color = '#bbb';
-                h4.style.textShadow = 'none';
-            }
-        });
+    // Add navigation link active state functionality
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.nav-links a, .footer-links a');
+    
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'Homepage.html' && linkPage === 'Homepage.html')) {
+            link.classList.add('active');
+        }
+    });
 
-        // Add click handler with fade effect
+    // Add smooth navigation transitions
+    navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            
-            // Add fade out effect before navigation
-            document.body.style.opacity = '0.8';
-            document.body.style.transition = 'opacity 0.3s ease';
-            
+            // Add a subtle click effect
+            this.style.transform = 'scale(0.95)';
             setTimeout(() => {
-                window.location.href = href;
-            }, 200);
+                this.style.transform = 'scale(1)';
+            }, 150);
         });
     });
 
@@ -71,13 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const socialLinks = document.querySelectorAll('.social-icons a');
     socialLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) scale(1.1)';
-            this.style.boxShadow = '0 5px 15px rgba(255, 255, 255, 0.2)';
+            this.style.transform = 'translateY(-2px)';
+            this.style.color = '#fff';
+            this.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
         });
         
         link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = 'none';
+            this.style.transform = 'translateY(0)';
+            this.style.color = '#888';
+            this.style.backgroundColor = 'transparent';
         });
     });
 
