@@ -13,7 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Setup proper directory structure
+        run: |
+          cp src/pages/Homepage.html src/index.html
+          sed -i 's/pages\///' src/index.html
+          find src/pages -type f -name "*.html" -exec sed -i 's/Homepage.html/index.html/g' {} +
+      
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: src
-          branch: gh-pages 
+          branch: gh-pages
+          clean: true 
