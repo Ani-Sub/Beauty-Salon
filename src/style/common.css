@@ -1,6 +1,6 @@
 /* CSS Variables */
 :root {
-    /* Light Theme Colors - Restored Original Sage Green & Cream Palette */
+    /* Simplified Color Scheme - Sage Green & Cream */
     --primary-color: #435946;
     --primary-dark: #2C3A2F;
     --primary-light: #5B7161;
@@ -8,7 +8,7 @@
     --text-light: #F5F6F0;
     --text-dark: #2C3A2F;
     --background-light: #F5F6F0;
-    --background-dark: #DCE4D7;
+    --background-dark: #E8E9E3;
     
     /* Typography */
     --font-primary: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,7 +33,7 @@
     --transition-medium: 0.3s ease;
     --transition-slow: 0.5s ease;
     
-    /* Shadows - Light Theme */
+    /* Shadows */
     --shadow-sm: 0 2px 5px rgba(67, 89, 70, 0.1);
     --shadow-md: 0 4px 10px rgba(67, 89, 70, 0.15);
     --shadow-lg: 0 8px 20px rgba(67, 89, 70, 0.2);
@@ -47,50 +47,24 @@
     --z-index-dropdown: 800;
 }
 
-/* Dark Theme */
+/* Dark Theme - Using Same Sage Green & Cream Palette */
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Dark Theme Colors */
+        /* Dark mode uses inverted sage green and cream */
         --primary-color: #9CAF88;
-        --primary-dark: #435946;
+        --primary-dark: #7A8B6A;
         --primary-light: #B8CBA3;
-        --accent-color: #DCE4D7;
-        --text-light: #F5F6F0;
+        --accent-color: #F5F6F0;
+        --text-light: #2C3A2F;
         --text-dark: #F5F6F0;
-        --background-light: #1a1f1c;
-        --background-dark: #0f1311;
+        --background-light: #2C3A2F;
+        --background-dark: #1F2821;
         
         /* Dark Theme Shadows */
         --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.3);
         --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.4);
         --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.5);
         --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.6);
-    }
-    
-    /* Dark mode specific adjustments for semi-transparent backgrounds */
-    .page-header,
-    .about-section,
-    .service-card,
-    .cta-section,
-    .gallery-intro,
-    .info-item,
-    .value-card,
-    .team-member {
-        background: rgba(26, 31, 28, 0.9) !important;
-        border: 1px solid rgba(156, 175, 136, 0.3);
-    }
-    
-    .modal-content {
-        background: var(--background-light) !important;
-        border: 1px solid rgba(156, 175, 136, 0.3);
-    }
-    
-    /* Ensure proper contrast for hover states in dark mode */
-    .service-card:hover,
-    .value-card:hover,
-    .team-member:hover {
-        background: rgba(26, 31, 28, 0.95) !important;
-        border-color: var(--accent-color);
     }
 }
 
@@ -112,31 +86,12 @@ body {
     font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--text-dark);
-    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 50%, var(--background-light) 100%);
-    background-size: 400% 400%;
+    background: var(--background-light);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
     transition: background var(--transition-medium), color var(--transition-medium);
-}
-
-/* Light Mode Specific Styles for Beautiful Cream/Sage Backgrounds */
-.page-header,
-.about-section,
-.service-card,
-.cta-section,
-.gallery-intro,
-.info-item,
-.value-card,
-.team-member {
-    background: rgba(245, 246, 240, 0.9);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(156, 175, 136, 0.2);
-}
-
-.modal-content {
-    background: var(--background-light);
 }
 
 /* Typography */
@@ -227,13 +182,13 @@ a {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent-color);
+    opacity: 0.8;
     transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: var(--primary-color);
     color: var(--text-light);
     padding: var(--spacing-lg) var(--spacing-xl);
     margin-top: auto;
@@ -262,7 +217,7 @@ footer {
 }
 
 .footer-links h4:hover {
-    color: var(--accent-color);
+    opacity: 0.8;
     transform: translateY(-1px);
 }
 
@@ -280,8 +235,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: var(--accent-color);
-    background-color: rgba(245, 246, 240, 0.1);
+    opacity: 0.8;
     transform: translateY(-2px);
 }
 

@@ -23,24 +23,13 @@ a {
 }
 
 body {
-    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 50%, var(--background-light) 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease-in-out infinite;
+    background: var(--background-light);
     color: var(--text-dark);
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     transition: background var(--transition-medium), color var(--transition-medium);
-}
-
-@keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
 }
 
 /* Typography */
@@ -103,13 +92,8 @@ h1, h2, h3, h4 {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent-color);
+    opacity: 0.8;
     transform: translateY(-2px);
-}
-
-.nav-links a.active {
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 2px;
 }
 
 /* Page Header (previously main header) */
@@ -117,12 +101,11 @@ h1, h2, h3, h4 {
     text-align: center;
     margin-bottom: 50px;
     animation: fadeIn 0.8s ease-out;
-    background: rgba(245, 246, 240, 0.9);
+    background: var(--background-light);
     padding: 30px;
     border-radius: 15px;
     box-shadow: var(--shadow-lg);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
 }
 
 .page-header h1 {
@@ -167,7 +150,7 @@ h1, h2, h3, h4 {
 
 /* Service cards */
 .service-card {
-    background: rgba(245, 246, 240, 0.9);
+    background: var(--background-light);
     border-radius: 15px;
     padding: 30px;
     text-align: center;
@@ -175,8 +158,7 @@ h1, h2, h3, h4 {
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(156, 175, 136, 0.2);
+    border: 2px solid var(--primary-color);
     animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;
 }
@@ -184,36 +166,18 @@ h1, h2, h3, h4 {
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--accent-color);
-    background: linear-gradient(135deg, rgba(245, 246, 240, 0.98) 0%, rgba(220, 228, 215, 0.98) 100%);
+    border-color: var(--primary-dark);
 }
 
 .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(156, 175, 136, 0.1) 0%, rgba(67, 89, 70, 0.1) 100%);
-    border-radius: 15px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-.service-card:hover::before {
-    opacity: 1;
+    display: none;
 }
 
 .service-icon {
     font-size: 2.5em;
     margin-bottom: 15px;
     display: inline-block;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-color);
     animation: pulseIcon 2s ease-in-out infinite;
 }
 
@@ -244,10 +208,10 @@ h1, h2, h3, h4 {
     text-align: center;
     margin: 50px 0;
     padding: 40px;
-    background: rgba(245, 246, 240, 0.9);
+    background: var(--background-light);
     border-radius: 15px;
     box-shadow: var(--shadow-lg);
-    backdrop-filter: blur(10px);
+    border: 2px solid var(--primary-color);
     animation: fadeIn 1s ease-out;
 }
 
@@ -266,7 +230,7 @@ h1, h2, h3, h4 {
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    background: var(--primary-color);
     color: var(--text-light);
     padding: 15px 30px;
     border-radius: 25px;
@@ -279,7 +243,7 @@ h1, h2, h3, h4 {
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    background: var(--primary-dark);
 }
 
 /* Modal styles */
@@ -479,7 +443,7 @@ h1, h2, h3, h4 {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: var(--primary-color);
     color: var(--text-light);
     padding: var(--spacing-lg) var(--spacing-xl);
     margin-top: auto;
@@ -514,7 +478,7 @@ footer {
 }
 
 .footer-links h4:hover {
-    color: var(--accent-color);
+    opacity: 0.8;
     transform: translateY(-1px);
 }
 
@@ -539,7 +503,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: var(--accent-color);
+    opacity: 0.8;
     background-color: rgba(245, 246, 240, 0.1);
     transform: translateY(-2px);
 }

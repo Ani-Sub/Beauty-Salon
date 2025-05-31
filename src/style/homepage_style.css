@@ -256,7 +256,7 @@ section {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: var(--primary-color);
   color: var(--text-light);
   padding: var(--spacing-lg) var(--spacing-xl);
   margin-top: auto;
@@ -291,7 +291,7 @@ footer {
 }
 
 .footer-links h4:hover {
-  color: var(--accent-color);
+  opacity: 0.8;
   transform: translateY(-1px);
 }
 
@@ -316,7 +316,7 @@ footer {
 }
 
 .social-icons a:hover {
-  color: var(--accent-color);
+  opacity: 0.8;
   background-color: rgba(245, 246, 240, 0.1);
   transform: translateY(-2px);
 }
