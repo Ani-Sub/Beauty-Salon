@@ -66,6 +66,32 @@
         --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.5);
         --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
+    
+    /* Dark mode specific adjustments for semi-transparent backgrounds */
+    .page-header,
+    .about-section,
+    .service-card,
+    .cta-section,
+    .gallery-intro,
+    .info-item,
+    .value-card,
+    .team-member {
+        background: rgba(26, 31, 28, 0.9) !important;
+        border: 1px solid rgba(156, 175, 136, 0.3);
+    }
+    
+    .modal-content {
+        background: var(--background-light) !important;
+        border: 1px solid rgba(156, 175, 136, 0.3);
+    }
+    
+    /* Ensure proper contrast for hover states in dark mode */
+    .service-card:hover,
+    .value-card:hover,
+    .team-member:hover {
+        background: rgba(26, 31, 28, 0.95) !important;
+        border-color: var(--accent-color);
+    }
 }
 
 /* Reset and Base Styles */
