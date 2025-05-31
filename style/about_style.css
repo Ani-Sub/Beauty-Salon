@@ -67,7 +67,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a {
-    color: var(--accent-color);
+    color: var(--text-light);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -78,7 +78,7 @@ h1, h2, h3, h4 {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--text-light);
+    color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -277,7 +277,7 @@ h1, h2, h3, h4 {
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--accent-color);
+    color: var(--text-light);
     padding: 1.5rem 2rem;
     margin-top: auto;
     box-shadow: var(--shadow-sm);
@@ -301,7 +301,7 @@ footer {
 }
 
 .footer-links h4 {
-    color: var(--accent-color);
+    color: var(--text-light);
     font-size: 0.8rem;
     letter-spacing: 1px;
     margin-bottom: 0;
@@ -311,7 +311,7 @@ footer {
 }
 
 .footer-links h4:hover {
-    color: var(--text-light);
+    color: var(--accent-color);
     transform: translateY(-1px);
 }
 
@@ -327,7 +327,7 @@ footer {
 }
 
 .social-icons a {
-    color: var(--accent-color);
+    color: var(--text-light);
     font-size: 1.2rem;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -336,7 +336,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: var(--text-light);
+    color: var(--accent-color);
     background-color: rgba(245, 246, 240, 0.1);
     transform: translateY(-2px);
 }
@@ -344,7 +344,7 @@ footer {
 .copyright {
     margin-left: 20px;
     font-size: 0.8rem;
-    color: var(--accent-color);
+    color: var(--text-light);
 }
 
 /* Animations */

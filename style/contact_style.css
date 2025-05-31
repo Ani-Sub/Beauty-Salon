@@ -125,18 +125,18 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a {
-    color: var(--accent-color);
+    color: var(--text-light);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
+    transition: all var(--transition-medium);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--text-light);
+    color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -308,11 +308,10 @@ h1, h2, h3, h4 {
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--accent-color);
-    padding: 1.5rem 2rem;
-    width: 100%;
+    color: var(--text-light);
+    padding: var(--spacing-lg) var(--spacing-xl);
     margin-top: auto;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 -2px 10px rgba(67, 89, 70, 0.1);
 }
 
 footer a {
@@ -337,17 +336,17 @@ footer a {
 }
 
 .footer-links h4 {
-    color: var(--accent-color);
+    color: var(--text-light);
     font-size: 0.8rem;
     letter-spacing: 1px;
-    margin-bottom: 0;
+    margin: 0;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all var(--transition-medium);
     padding: 5px 0;
 }
 
 .footer-links h4:hover {
-    color: var(--text-light);
+    color: var(--accent-color);
     transform: translateY(-1px);
 }
 
@@ -368,23 +367,24 @@ footer a {
 }
 
 .social-icons a {
-    color: var(--accent-color);
+    color: var(--text-light);
     font-size: 1.2rem;
-    transition: all 0.3s ease;
-    padding: 8px;
+    text-decoration: none;
+    transition: all var(--transition-medium);
+    padding: var(--spacing-sm);
     border-radius: 50%;
 }
 
 .social-icons a:hover {
-    color: var(--text-light);
+    color: var(--accent-color);
     background-color: rgba(245, 246, 240, 0.1);
     transform: translateY(-2px);
 }
 
 .copyright {
-    margin-left: 20px;
+    margin-left: var(--spacing-lg);
     font-size: 0.8rem;
-    color: var(--accent-color);
+    color: var(--text-light);
 }
 
 /* Mobile Menu Button */
