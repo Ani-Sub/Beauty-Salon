@@ -16,12 +16,26 @@ jobs:
       
       - name: Setup proper directory structure
         run: |
-          cp src/pages/Homepage.html src/index.html
-          sed -i 's/pages\///' src/index.html
-          find src/pages -type f -name "*.html" -exec sed -i 's/Homepage.html/index.html/g' {} +
+          # Ensure we're starting with a clean deployment
+          rm -rf build
+          mkdir -p build
+          
+          # Copy all assets first
+          cp -r src/* build/
+          
+          # Move the Homepage to index.html if it exists in pages
+          if [ -f build/pages/Homepage.html ]; then
+            cp build/pages/Homepage.html build/index.html
+          fi
+          
+          # Update links in all HTML files
+          find build -type f -name "*.html" -exec sed -i 's/Homepage.html/index.html/g' {} +
+          find build -type f -name "*.html" -exec sed -i 's/..\/style\//style\//g' {} +
+          find build -type f -name "*.html" -exec sed -i 's/..\/scripts\//scripts\//g' {} +
+          find build -type f -name "*.html" -exec sed -i 's/..\/pictures\//pictures\//g' {} +
       
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: src
+          folder: build
           branch: gh-pages
           clean: true 
