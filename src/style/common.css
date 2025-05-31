@@ -1,6 +1,6 @@
 /* CSS Variables */
 :root {
-    /* Light Theme Colors */
+    /* Light Theme Colors - Restored Original Sage Green & Cream Palette */
     --primary-color: #435946;
     --primary-dark: #2C3A2F;
     --primary-light: #5B7161;
@@ -33,7 +33,7 @@
     --transition-medium: 0.3s ease;
     --transition-slow: 0.5s ease;
     
-    /* Shadows */
+    /* Shadows - Light Theme */
     --shadow-sm: 0 2px 5px rgba(67, 89, 70, 0.1);
     --shadow-md: 0 4px 10px rgba(67, 89, 70, 0.15);
     --shadow-lg: 0 8px 20px rgba(67, 89, 70, 0.2);
@@ -118,6 +118,25 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    transition: background var(--transition-medium), color var(--transition-medium);
+}
+
+/* Light Mode Specific Styles for Beautiful Cream/Sage Backgrounds */
+.page-header,
+.about-section,
+.service-card,
+.cta-section,
+.gallery-intro,
+.info-item,
+.value-card,
+.team-member {
+    background: rgba(245, 246, 240, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(156, 175, 136, 0.2);
+}
+
+.modal-content {
+    background: var(--background-light);
 }
 
 /* Typography */

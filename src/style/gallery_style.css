@@ -169,7 +169,6 @@ a {
     margin: 30px auto;
     max-width: 800px;
     padding: 40px;
-    background: rgba(245, 246, 240, 0.9);
     border-radius: 15px;
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(10px);
@@ -208,14 +207,13 @@ a {
 .category-btn {
     padding: 10px 25px;
     border: none;
-    background: rgba(245, 246, 240, 0.9);
-    color: var(--primary-color);
     border-radius: 25px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
+    color: var(--primary-color);
 }
 
 .category-btn:hover {
@@ -273,7 +271,7 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(67, 89, 70, 0.7);
+    background: linear-gradient(135deg, rgba(67, 89, 70, 0.8) 0%, rgba(44, 58, 47, 0.9) 100%);
     padding: 20px;
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
