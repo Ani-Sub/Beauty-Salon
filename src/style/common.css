@@ -1,6 +1,6 @@
 /* CSS Variables */
 :root {
-    /* Colors */
+    /* Light Theme Colors */
     --primary-color: #435946;
     --primary-dark: #2C3A2F;
     --primary-light: #5B7161;
@@ -45,6 +45,27 @@
     --z-index-modal: 1000;
     --z-index-overlay: 900;
     --z-index-dropdown: 800;
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Theme Colors */
+        --primary-color: #9CAF88;
+        --primary-dark: #435946;
+        --primary-light: #B8CBA3;
+        --accent-color: #DCE4D7;
+        --text-light: #F5F6F0;
+        --text-dark: #F5F6F0;
+        --background-light: #1a1f1c;
+        --background-dark: #0f1311;
+        
+        /* Dark Theme Shadows */
+        --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.5);
+        --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
 }
 
 /* Reset and Base Styles */

@@ -11,8 +11,9 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  transition: background-color var(--transition-medium), color var(--transition-medium);
 }
 
 body {
@@ -27,10 +28,11 @@ button {
 
 /* Typography */
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-secondary);
   font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: var(--primary-color);
 }
 
 h1 {
@@ -58,7 +60,7 @@ h4 {
   display: inline-block;
   padding: 12px 30px;
   background: rgba(245, 246, 240, 0.1);
-  color: #F5F6F0;
+  color: var(--text-light);
   text-decoration: none;
   border-radius: 25px;
   font-weight: 500;
@@ -71,19 +73,19 @@ h4 {
 .btn:hover {
   background: rgba(245, 246, 240, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
   border-color: rgba(245, 246, 240, 0.4);
 }
 
 .btn.outline {
   background-color: transparent;
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
 }
 
 .btn.outline:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--text-dark);
+  color: var(--background-light);
 }
 
 /* Section Styling */
@@ -103,7 +105,7 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #F5F6F0;
+  color: var(--text-light);
   overflow: hidden;
 }
 
@@ -117,6 +119,13 @@ section {
   z-index: 1;
 }
 
+/* Dark mode overlay adjustment */
+@media (prefers-color-scheme: dark) {
+  .hero-overlay {
+    background: rgba(15, 19, 17, 0.8);
+  }
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -127,17 +136,18 @@ section {
 .hero h1 {
   font-size: 4em;
   margin-bottom: 20px;
-  font-family: 'Dancing Script', cursive;
+  font-family: var(--font-decorative);
   animation: fadeIn 1s ease-out;
-  color: #F5F6F0;
+  color: var(--text-light);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tagline {
   font-size: 1.5em;
   margin-bottom: 30px;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-secondary);
   animation: fadeIn 1s ease-out 0.3s both;
+  color: var(--text-light);
 }
 
 /* Coming Soon Banner */
@@ -155,14 +165,14 @@ section {
 .opening-soon {
   display: block;
   font-size: 2em;
-  color: #F5F6F0;
+  color: var(--text-light);
   margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-secondary);
 }
 
 .coming-soon-text {
   font-size: 1.1em;
-  color: #DCE4D7;
+  color: var(--accent-color);
 }
 
 /* Navigation Buttons */
@@ -177,7 +187,7 @@ section {
 
 .btn {
   background: rgba(245, 246, 240, 0.15);
-  color: #F5F6F0;
+  color: var(--text-light);
   padding: 12px 30px;
   border-radius: 25px;
   text-decoration: none;
@@ -190,7 +200,7 @@ section {
 .btn:hover {
   background: rgba(245, 246, 240, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 /* Homepage-specific responsive styles */
@@ -246,11 +256,11 @@ section {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #435946 0%, #2C3A2F 100%);
-  color: #DCE4D7;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--accent-color);
   padding: 1.5rem 2rem;
   margin-top: auto;
-  box-shadow: 0 -2px 10px rgba(67, 89, 70, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .footer-container {
@@ -271,7 +281,7 @@ footer {
 }
 
 .footer-links h4 {
-  color: #DCE4D7;
+  color: var(--accent-color);
   font-size: 0.8rem;
   letter-spacing: 1px;
   margin-bottom: 0;
@@ -281,7 +291,7 @@ footer {
 }
 
 .footer-links h4:hover {
-  color: #F5F6F0;
+  color: var(--text-light);
   transform: translateY(-1px);
 }
 
@@ -297,7 +307,7 @@ footer {
 }
 
 .social-icons a {
-  color: #DCE4D7;
+  color: var(--accent-color);
   font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -306,7 +316,7 @@ footer {
 }
 
 .social-icons a:hover {
-  color: #F5F6F0;
+  color: var(--text-light);
   background-color: rgba(245, 246, 240, 0.1);
   transform: translateY(-2px);
 }
@@ -314,7 +324,7 @@ footer {
 .copyright {
   margin-left: 20px;
   font-size: 0.8rem;
-  color: #DCE4D7;
+  color: var(--accent-color);
 }
 
 /* Remove default focus outline and add custom focus styles */
