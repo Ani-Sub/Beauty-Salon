@@ -172,7 +172,7 @@ section {
 
 .coming-soon-text {
   font-size: 1.1em;
-  color: var(--accent-color);
+  color: var(--text-light);
 }
 
 /* Navigation Buttons */
