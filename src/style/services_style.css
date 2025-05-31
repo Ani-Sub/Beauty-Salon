@@ -296,13 +296,13 @@ h1, h2, h3, h4 {
 
 .modal-content {
     position: relative;
-    background: #F5F6F0;
+    background: var(--background-light);
     margin: 15% auto;
     padding: 30px;
     width: 90%;
     max-width: 500px;
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(67, 89, 70, 0.2);
+    box-shadow: var(--shadow-xl);
     animation: modalSlideIn 0.3s ease-out;
 }
 
@@ -312,35 +312,35 @@ h1, h2, h3, h4 {
     top: 15px;
     font-size: 28px;
     font-weight: bold;
-    color: #5B7161;
+    color: var(--primary-light);
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .close:hover {
-    color: #435946;
+    color: var(--primary-color);
 }
 
 .modal-content h3 {
-    color: #435946;
+    color: var(--primary-color);
     font-size: 1.8em;
     margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
 }
 
 .modal-content p {
-    color: #5B7161;
+    color: var(--primary-light);
     margin-bottom: 15px;
     line-height: 1.6;
 }
 
 .modal-content strong {
-    color: #435946;
+    color: var(--primary-color);
     font-weight: 600;
 }
 
 .modal-content em {
-    color: #5B7161;
+    color: var(--primary-light);
     font-style: italic;
 }
 

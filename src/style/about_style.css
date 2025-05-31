@@ -106,7 +106,7 @@ h1, h2, h3, h4 {
     border-radius: 15px;
     padding: 40px;
     margin-bottom: 30px;
-    box-shadow: 0 8px 32px rgba(67, 89, 70, 0.1);
+    box-shadow: var(--shadow-lg);
     backdrop-filter: blur(10px);
     animation: fadeIn 0.8s ease-out;
 }
@@ -118,15 +118,15 @@ h1, h2, h3, h4 {
 }
 
 .section-header h1 {
-    color: #435946;
+    color: var(--primary-color);
     font-size: 2.5em;
     margin-bottom: 15px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
     animation: fadeIn 0.6s ease-out;
 }
 
 .section-header p {
-    color: #5B7161;
+    color: var(--primary-light);
     font-size: 1.1em;
     max-width: 800px;
     margin: 0 auto;
@@ -137,14 +137,14 @@ h1, h2, h3, h4 {
 .story-text {
     max-width: 800px;
     margin: 0 auto;
-    color: #2C3A2F;
+    color: var(--text-dark);
 }
 
 .story-text h2 {
-    color: #435946;
+    color: var(--primary-color);
     font-size: 1.8em;
     margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
     text-align: center;
 }
 
@@ -156,7 +156,7 @@ h1, h2, h3, h4 {
 .story-image {
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(67, 89, 70, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
 .story-image img {
@@ -183,7 +183,7 @@ h1, h2, h3, h4 {
     padding: 30px;
     background: rgba(245, 246, 240, 0.95);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(67, 89, 70, 0.1);
+    box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease;
 }
 
@@ -194,18 +194,18 @@ h1, h2, h3, h4 {
 .value-icon {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: #435946;
+    color: var(--primary-color);
 }
 
 .value-title {
-    color: #435946;
+    color: var(--primary-color);
     font-size: 1.3em;
     margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
 }
 
 .value-description {
-    color: #5B7161;
+    color: var(--primary-light);
     font-size: 0.95em;
 }
 
@@ -222,7 +222,7 @@ h1, h2, h3, h4 {
     background: rgba(245, 246, 240, 0.95);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(67, 89, 70, 0.1);
+    box-shadow: var(--shadow-lg);
     transition: transform 0.3s ease;
 }
 
@@ -255,32 +255,32 @@ h1, h2, h3, h4 {
 }
 
 .member-name {
-    color: #435946;
+    color: var(--primary-color);
     font-size: 1.4em;
     margin-bottom: 5px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
 }
 
 .member-role {
-    color: #5B7161;
+    color: var(--primary-light);
     font-size: 1em;
     margin-bottom: 15px;
     font-style: italic;
 }
 
 .member-bio {
-    color: #2C3A2F;
+    color: var(--text-dark);
     font-size: 0.9em;
     line-height: 1.6;
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #435946 0%, #2C3A2F 100%);
-    color: #DCE4D7;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--accent-color);
     padding: 1.5rem 2rem;
     margin-top: auto;
-    box-shadow: 0 -2px 10px rgba(67, 89, 70, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .footer-container {
@@ -301,7 +301,7 @@ footer {
 }
 
 .footer-links h4 {
-    color: #DCE4D7;
+    color: var(--accent-color);
     font-size: 0.8rem;
     letter-spacing: 1px;
     margin-bottom: 0;
@@ -311,7 +311,7 @@ footer {
 }
 
 .footer-links h4:hover {
-    color: #F5F6F0;
+    color: var(--text-light);
     transform: translateY(-1px);
 }
 
@@ -327,7 +327,7 @@ footer {
 }
 
 .social-icons a {
-    color: #DCE4D7;
+    color: var(--accent-color);
     font-size: 1.2rem;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -336,7 +336,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: #F5F6F0;
+    color: var(--text-light);
     background-color: rgba(245, 246, 240, 0.1);
     transform: translateY(-2px);
 }
@@ -344,7 +344,7 @@ footer {
 .copyright {
     margin-left: 20px;
     font-size: 0.8rem;
-    color: #DCE4D7;
+    color: var(--accent-color);
 }
 
 /* Animations */
