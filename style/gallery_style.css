@@ -6,6 +6,34 @@
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 50%, var(--background-light) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease-in-out infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background var(--transition-medium), color var(--transition-medium);
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 /* Remove default focus outline and add custom focus styles */
 a:focus {
     outline: none;
@@ -20,26 +48,6 @@ a:focus-visible {
 /* Remove default link styles */
 a {
     text-decoration: none;
-}
-
-body {
-    background: linear-gradient(135deg, #F5F6F0 0%, #E8EDE2 25%, #DCE4D7 50%, #E8EDE2 75%, #F5F6F0 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease-in-out infinite;
-    color: #2C3A2F;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-@keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
 }
 
 /* Animation Keyframes */
@@ -440,4 +448,13 @@ footer {
         max-width: 200px;
         margin: 0 auto;
     }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
 }

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-primary);
 }
 
 /* Remove default focus outline and add custom focus styles */
@@ -11,7 +11,7 @@ a:focus {
 }
 
 a:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.3);
+    outline: 2px solid var(--accent-color);
     outline-offset: 2px;
     border-radius: 2px;
 }
@@ -64,14 +64,15 @@ a:focus-visible {
 }
 
 body {
-    background: linear-gradient(135deg, #F5F6F0 0%, #E8EDE2 25%, #DCE4D7 50%, #E8EDE2 75%, #F5F6F0 100%);
+    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 50%, var(--background-light) 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease-in-out infinite;
-    color: #2C3A2F;
+    color: var(--text-dark);
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background var(--transition-medium), color var(--transition-medium);
 }
 
 @keyframes gradientShift {
@@ -85,18 +86,18 @@ body {
 
 /* Typography */
 h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-secondary);
     font-weight: 600;
     margin-bottom: 1rem;
     line-height: 1.2;
-    color: #435946;
+    color: var(--primary-color);
 }
 
 /* Header Navigation Styles */
 .header-nav {
-    background: #435946;
+    background: var(--primary-color);
     padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(67, 89, 70, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
@@ -109,11 +110,11 @@ h1, h2, h3, h4 {
 }
 
 .nav-container h1 {
-    color: #F5F6F0;
+    color: var(--text-light);
     font-size: 2rem;
     margin: 0;
     font-weight: 600;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--font-decorative);
     animation: fadeIn 0.6s ease-out;
 }
 
@@ -124,7 +125,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a {
-    color: #DCE4D7;
+    color: var(--accent-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -135,12 +136,12 @@ h1, h2, h3, h4 {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #F5F6F0;
+    color: var(--text-light);
     transform: translateY(-2px);
 }
 
 .nav-links a.active {
-    border-bottom: 2px solid #9CAF88;
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 2px;
 }
 
