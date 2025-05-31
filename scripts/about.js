@@ -1,1 +1,14 @@
-document.addEventListener("DOMContentLoaded",(function(){const t=window.location.pathname.split("/").pop();document.querySelectorAll(".nav-links a, .footer-links a").forEach((e=>{const n=e.getAttribute("href");(n===t||""===t&&"index.html"===n||"About.html"===t&&"About.html"===n)&&e.classList.add("active")}))}));
+document.addEventListener('DOMContentLoaded', function() {
+    // Add navigation link active state functionality
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.nav-links a, .footer-links a');
+    
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'About.html' && linkPage === 'About.html')) {
+            link.classList.add('active');
+        }
+    });
+});

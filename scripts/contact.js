@@ -1,1 +1,161 @@
-function sanitizeInput(t){const e=document.createElement("div");return e.textContent=t,e.textContent}document.addEventListener("DOMContentLoaded",(function(){const t=window.location.pathname.split("/").pop();document.querySelectorAll(".nav-links a, .footer-links a").forEach((e=>{const n=e.getAttribute("href");(n===t||""===t&&"index.html"===n||"Contact.html"===t&&"Contact.html"===n)&&e.classList.add("active")})),document.querySelectorAll('a[href^="#"]').forEach((t=>{t.addEventListener("click",(function(t){t.preventDefault();const e=document.querySelector(this.getAttribute("href"));e&&e.scrollIntoView({behavior:"smooth",block:"start"})}))}));document.querySelectorAll(".info-item").forEach((t=>{t.addEventListener("mouseenter",(function(){this.style.transform="translateY(-5px)"})),t.addEventListener("mouseleave",(function(){this.style.transform="translateY(0)"}))}));document.querySelectorAll(".info-content a").forEach((t=>{t.addEventListener("click",(function(t){if(this.href.startsWith("mailto:")||this.href.startsWith("tel:")){const t=this.textContent;navigator.clipboard.writeText(t).then((()=>{const t=document.createElement("div");t.className="copy-tooltip",t.textContent="Copied!",t.style.position="fixed",t.style.backgroundColor="#333",t.style.color="white",t.style.padding="5px 10px",t.style.borderRadius="3px",t.style.fontSize="14px",t.style.zIndex="1000";const e=this.getBoundingClientRect();t.style.top=e.top-30+"px",t.style.left=`${e.left}px`,document.body.appendChild(t),setTimeout((()=>{document.body.removeChild(t)}),2e3)}))}}))}));const e=new IntersectionObserver(((t,e)=>{t.forEach((t=>{if(t.isIntersecting){const n=t.target;n.src||(n.src=n.getAttribute("data-src")),e.unobserve(n)}}))}),{rootMargin:"50px"}),n=document.querySelector(".map-container iframe");let o;n&&(n.setAttribute("data-src",n.src),n.removeAttribute("src"),e.observe(n)),window.addEventListener("resize",(function(){clearTimeout(o),o=setTimeout((()=>{const t=document.querySelector(".contact-container");window.innerWidth<=768?t.style.padding="15px":t.style.padding="20px"}),250)}));const s=document.querySelector(".nav-container"),i=document.querySelector(".nav-links"),r=document.createElement("button");function c(){window.innerWidth<=768?(r.style.display="block",i.classList.remove("show")):(r.style.display="none",i.classList.remove("show"))}r.className="mobile-menu-btn",r.innerHTML='<i class="fas fa-bars"></i>',r.style.display="none",s.insertBefore(r,i),r.addEventListener("click",(()=>{i.classList.toggle("show"),r.innerHTML=i.classList.contains("show")?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>'})),c(),window.addEventListener("resize",c)}));
+// Sanitize function to prevent XSS
+function sanitizeInput(input) {
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.textContent;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add navigation link active state functionality
+    const currentPage = window.location.pathname.split('/').pop();
+    const navigationLinks = document.querySelectorAll('.nav-links a, .footer-links a');
+    
+    navigationLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'Contact.html' && linkPage === 'Contact.html')) {
+            link.classList.add('active');
+        }
+    });
+
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add hover effects for contact info items
+    const infoItems = document.querySelectorAll('.info-item');
+    infoItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Add click-to-copy functionality for email and phone
+    const contactElements = document.querySelectorAll('.info-content a');
+    contactElements.forEach(element => {
+        element.addEventListener('click', function(e) {
+            if (this.href.startsWith('mailto:') || this.href.startsWith('tel:')) {
+                const textToCopy = this.textContent;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Create and show a temporary tooltip
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'copy-tooltip';
+                    tooltip.textContent = 'Copied!';
+                    tooltip.style.position = 'fixed';
+                    tooltip.style.backgroundColor = '#333';
+                    tooltip.style.color = 'white';
+                    tooltip.style.padding = '5px 10px';
+                    tooltip.style.borderRadius = '3px';
+                    tooltip.style.fontSize = '14px';
+                    tooltip.style.zIndex = '1000';
+
+                    // Position the tooltip near the clicked element
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style.top = `${rect.top - 30}px`;
+                    tooltip.style.left = `${rect.left}px`;
+
+                    document.body.appendChild(tooltip);
+
+                    // Remove the tooltip after 2 seconds
+                    setTimeout(() => {
+                        document.body.removeChild(tooltip);
+                    }, 2000);
+                });
+            }
+        });
+    });
+
+    // Lazy load the map iframe when it comes into view
+    const mapObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target;
+                // Only load the map if it hasn't been loaded yet
+                if (!iframe.src) {
+                    iframe.src = iframe.getAttribute('data-src');
+                }
+                observer.unobserve(iframe);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+
+    // Observe the map iframe
+    const mapIframe = document.querySelector('.map-container iframe');
+    if (mapIframe) {
+        // Store the src in data-src and remove the src attribute
+        mapIframe.setAttribute('data-src', mapIframe.src);
+        mapIframe.removeAttribute('src');
+        mapObserver.observe(mapIframe);
+    }
+
+    // Add window resize handler for responsive adjustments
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        // Debounce the resize event
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // Add any responsive adjustments here if needed
+            const container = document.querySelector('.contact-container');
+            if (window.innerWidth <= 768) {
+                // Mobile adjustments
+                container.style.padding = '15px';
+            } else {
+                // Desktop adjustments
+                container.style.padding = '20px';
+            }
+        }, 250);
+    });
+
+    // Add mobile menu toggle functionality
+    const navContainer = document.querySelector('.nav-container');
+    const mobileNavLinks = document.querySelector('.nav-links');
+    
+    // Create mobile menu button
+    const mobileMenuBtn = document.createElement('button');
+    mobileMenuBtn.className = 'mobile-menu-btn';
+    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    mobileMenuBtn.style.display = 'none';
+
+    // Insert the button after the h1 in the nav container
+    navContainer.insertBefore(mobileMenuBtn, mobileNavLinks);
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNavLinks.classList.toggle('show');
+        mobileMenuBtn.innerHTML = mobileNavLinks.classList.contains('show') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Handle mobile menu display on resize
+    function handleMobileMenu() {
+        if (window.innerWidth <= 768) {
+            mobileMenuBtn.style.display = 'block';
+            mobileNavLinks.classList.remove('show');
+        } else {
+            mobileMenuBtn.style.display = 'none';
+            mobileNavLinks.classList.remove('show');
+        }
+    }
+
+    // Initial check and event listener for resize
+    handleMobileMenu();
+    window.addEventListener('resize', handleMobileMenu);
+});
