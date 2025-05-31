@@ -20,19 +20,29 @@ jobs:
           rm -rf build
           mkdir -p build
           
-          # Copy all assets first
+          # Copy everything from src to build
           cp -r src/* build/
           
-          # Move the Homepage to index.html if it exists in pages
-          if [ -f build/pages/Homepage.html ]; then
-            cp build/pages/Homepage.html build/index.html
-          fi
+          # Remove the redundant Homepage.html if it exists (we use index.html)
+          rm -f build/pages/Homepage.html
           
-          # Update links in all HTML files
-          find build -type f -name "*.html" -exec sed -i 's/Homepage.html/index.html/g' {} +
-          find build -type f -name "*.html" -exec sed -i 's/..\/style\//style\//g' {} +
-          find build -type f -name "*.html" -exec sed -i 's/..\/scripts\//scripts\//g' {} +
-          find build -type f -name "*.html" -exec sed -i 's/..\/pictures\//pictures\//g' {} +
+          # Fix navigation in index.html (root)
+          # The paths to pages are already correct (pages/Gallery.html etc.)
+          
+          # Fix navigation in all page files
+          # Update Homepage.html links to go back to root index.html
+          find build/pages -type f -name "*.html" -exec sed -i 's|href="Homepage.html"|href="../index.html"|g' {} +
+          
+          # Ensure page-to-page navigation works (these are already correct as relative links)
+          # The links like href="Gallery.html" work fine when pages are in the same directory
+          
+          # Fix any absolute paths that might cause issues
+          find build -type f -name "*.html" -exec sed -i 's|href="/pages/|href="pages/|g' {} +
+          find build -type f -name "*.html" -exec sed -i 's|href="/index.html"|href="index.html"|g' {} +
+          
+          # Debug: List the structure
+          echo "Build directory structure:"
+          find build -type f -name "*.html" | sort
       
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
