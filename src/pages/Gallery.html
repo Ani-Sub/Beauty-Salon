@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - R&R Beauty Salon</title>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/dancingscript/v24/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSoHTeB9ptDqpw.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Load fonts with font-display strategy -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap&text=R%26Beauty%20Salon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Load styles -->
     <link rel="stylesheet" href="../style/gallery_style.css">
+    
+    <!-- Load icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* Fallback font metrics matching Dancing Script */
+        @font-face {
+            font-family: 'Dancing Script Fallback';
+            size-adjust: 110%;
+            src: local('Brush Script MT');
+        }
+        
+        .header-container h1 {
+            font-family: 'Dancing Script', 'Dancing Script Fallback', cursive;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Navigation -->

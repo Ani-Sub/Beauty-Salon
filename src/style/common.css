@@ -82,6 +82,20 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
 }
 
+/* Header specific styles */
+.header-container h1 {
+    font-family: var(--font-decorative);
+    color: var(--text-light);
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Add a loading class to handle font loading state */
+.fonts-loading .header-container h1 {
+    opacity: 0;
+}
+
 a {
     color: inherit;
     text-decoration: none;

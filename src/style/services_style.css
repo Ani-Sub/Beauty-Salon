@@ -204,6 +204,7 @@ h1, h2, h3, h4 {
     display: inline-block;
     background: linear-gradient(135deg, #435946 0%, #5B7161 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pulseIcon 2s ease-in-out infinite;
 }

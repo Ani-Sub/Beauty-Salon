@@ -4,9 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Performance monitoring
-    const startTime = performance.now();
-    
     // Cache DOM elements
     const categoryBtns = document.querySelectorAll('.category-btn');
     const items = document.querySelectorAll('.gallery-item');
@@ -208,60 +205,38 @@ document.addEventListener('DOMContentLoaded', function() {
      * @param {string} category - The category to filter by
      */
     function filterGallery(category) {
-        try {
-            let delay = 0;
-            const itemsToShow = [];
-            const itemsToHide = [];
-            
-            // Sort items into show/hide arrays
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    itemsToShow.push(item);
-                } else {
-                    itemsToHide.push(item);
-                }
-            });
-            
-            // Hide items first
-            itemsToHide.forEach(hideItem);
-            
-            // Show matching items with delay
-            itemsToShow.forEach(item => {
-                showItem(item, delay);
-                delay = Math.min(delay + STAGGER_DELAY, MAX_ANIMATION_DURATION);
-            });
-        } catch (error) {
-            console.error('Error filtering gallery:', error);
-            // Fallback: show all items
-            items.forEach(item => item.style.display = 'block');
-        }
-    }
-    
-    // Add click event listener to each category button
-    categoryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            try {
-                const category = this.getAttribute('data-category');
-                if (!category) return;
-                
-                // Update active button state
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Apply category filter
-                filterGallery(category);
-            } catch (error) {
-                console.error('Error handling category button click:', error);
+        items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, 50);
+            } else {
+                item.classList.remove('visible');
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 400); // Match the CSS transition duration
             }
         });
+    }
+    
+    // Category button click handler
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            // Filter gallery
+            filterGallery(this.dataset.category);
+        });
     });
-    
-    // Initialize gallery with 'all' category
-    filterGallery('all');
-    
-    // Performance logging
-    const endTime = performance.now();
-    console.log(`Gallery initialization took ${endTime - startTime}ms`);
+
+    // Initialize with all items visible
+    items.forEach(item => {
+        item.style.display = 'block';
+        item.classList.add('visible');
+    });
     
     // Cleanup on page unload
     window.addEventListener('unload', () => {
