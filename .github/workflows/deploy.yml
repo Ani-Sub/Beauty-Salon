@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -12,33 +11,9 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    concurrency: ci-${{ github.ref }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: |
-          npm install -g html-minifier-terser
-          npm install -g clean-css-cli
-          npm install -g terser
-        continue-on-error: false
-
-      - name: Optimize and minify assets
-        run: |
-          find src/pages -name "*.html" -type f -exec html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o {} {} \;
-          find src/style -name "*.css" -type f -exec cleancss -o {} {} \;
-          find src/scripts -name "*.js" -type f -exec terser {} -c -m -o {} \;
-        continue-on-error: false
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - uses: actions/checkout@v3
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: src
-          branch: gh-pages
-          clean: true 
+          branch: gh-pages 
