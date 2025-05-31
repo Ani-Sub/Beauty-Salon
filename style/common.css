@@ -1,6 +1,6 @@
 /* CSS Variables */
 :root {
-    /* Simplified Color Scheme - Sage Green & Cream */
+    /* Light Mode Colors - Sage Green & Cream */
     --primary-color: #435946;
     --primary-dark: #2C3A2F;
     --primary-light: #5B7161;
@@ -47,27 +47,6 @@
     --z-index-dropdown: 800;
 }
 
-/* Dark Theme - Using Same Sage Green & Cream Palette */
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Dark mode uses inverted sage green and cream */
-        --primary-color: #9CAF88;
-        --primary-dark: #7A8B6A;
-        --primary-light: #B8CBA3;
-        --accent-color: #F5F6F0;
-        --text-light: #2C3A2F;
-        --text-dark: #F5F6F0;
-        --background-light: #2C3A2F;
-        --background-dark: #1F2821;
-        
-        /* Dark Theme Shadows */
-        --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.3);
-        --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.4);
-        --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.5);
-        --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.6);
-    }
-}
-
 /* Reset and Base Styles */
 *, *::before, *::after {
     margin: 0;
@@ -86,12 +65,11 @@ body {
     font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--text-dark);
-    background: var(--background-light);
+    background-color: var(--background-light);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    transition: background var(--transition-medium), color var(--transition-medium);
 }
 
 /* Typography */
@@ -104,17 +82,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Header specific styles */
-.header-container h1 {
+.header-container h1,
+.nav-container h1 {
     font-family: var(--font-decorative);
     color: var(--text-light);
     font-size: 2rem;
     margin: 0;
     font-weight: 600;
-}
-
-/* Add a loading class to handle font loading state */
-.fonts-loading .header-container h1 {
-    opacity: 0;
 }
 
 a {
@@ -128,7 +102,7 @@ a {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-xl);
     border-radius: var(--border-radius-xl);
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     color: var(--text-light);
     font-weight: 500;
     transition: all var(--transition-medium);
@@ -138,14 +112,14 @@ a {
 }
 
 .btn:hover {
-    background: var(--primary-dark);
+    background-color: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 /* Header Navigation */
 .header-nav {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     padding: var(--spacing-lg) 0;
     box-shadow: var(--shadow-sm);
     position: relative;
@@ -159,12 +133,6 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.nav-container h1 {
-    color: var(--text-light);
-    font-family: var(--font-decorative);
-    margin: 0;
 }
 
 .nav-links {
@@ -188,7 +156,7 @@ a {
 
 /* Footer */
 footer {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     color: var(--text-light);
     padding: var(--spacing-lg) var(--spacing-xl);
     margin-top: auto;
@@ -292,30 +260,6 @@ button:focus-visible {
     outline-offset: 2px;
 }
 
-/* Print styles */
-@media print {
-    body {
-        background: none;
-        color: #000;
-    }
-    
-    .header-nav,
-    .footer,
-    .btn,
-    .social-icons {
-        display: none;
-    }
-    
-    a {
-        text-decoration: none;
-        color: #000;
-    }
-    
-    a[href]::after {
-        content: " (" attr(href) ")";
-    }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     html {
@@ -360,34 +304,5 @@ button:focus-visible {
     
     .btn {
         width: 100%;
-    }
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-    :root {
-        --primary-color: #000;
-        --primary-dark: #000;
-        --text-light: #fff;
-        --text-dark: #000;
-        --accent-color: #000;
-    }
-    
-    .btn,
-    .nav-links a,
-    .footer-links h4 {
-        border: 2px solid currentColor;
-    }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-    
-    html {
-        scroll-behavior: auto !important;
     }
 } 

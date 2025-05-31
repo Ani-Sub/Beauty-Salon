@@ -15,7 +15,7 @@ body {
     font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--text-dark);
-    background: var(--background-light);
+    background-color: var(--background-light);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
