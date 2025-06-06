@@ -3,7 +3,7 @@
 A professional website for R&R Beauty Salon, featuring services, gallery, about us, and contact information.
 
 ## Live Website
-Visit our website at: https://Ani-Sub.github.io/Beauty-Salon/
+Visit our website at: https://www.rnrbeautysalon.com
 
 ## Features
 - Responsive design for all devices
