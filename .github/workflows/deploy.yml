@@ -13,39 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Setup proper directory structure
+
+      - name: Copy site into build folder
         run: |
-          # Ensure we're starting with a clean deployment
           rm -rf build
-          mkdir -p build
-          
-          # Copy everything from src to build
+          mkdir build
           cp -r src/* build/
-          
-          # Remove the redundant Homepage.html if it exists (we use index.html)
-          rm -f build/pages/Homepage.html
-          
-          # Fix navigation in index.html (root)
-          # The paths to pages are already correct (pages/Gallery.html etc.)
-          
-          # Fix navigation in all page files
-          # Update Homepage.html links to go back to root index.html
-          find build/pages -type f -name "*.html" -exec sed -i 's|href="Homepage.html"|href="../index.html"|g' {} +
-          
-          # Ensure page-to-page navigation works (these are already correct as relative links)
-          # The links like href="Gallery.html" work fine when pages are in the same directory
-          
-          # Fix any absolute paths that might cause issues
-          find build -type f -name "*.html" -exec sed -i 's|href="/pages/|href="pages/|g' {} +
-          find build -type f -name "*.html" -exec sed -i 's|href="/index.html"|href="index.html"|g' {} +
-          
-          # Debug: List the structure
-          echo "Build directory structure:"
-          find build -type f -name "*.html" | sort
-      
+          # include extra root files if they exist
+          cp 404.html sitemap.xml robots.txt build/ || true
+          echo "==== Build directory ===="
+          tree -L 2 build || ls -R build
+
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
-          branch: gh-pages
+          folder: build       # what to publish
+          branch: gh-pages    # where to publish
           clean: true 
