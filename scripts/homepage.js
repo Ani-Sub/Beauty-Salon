@@ -101,28 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add subtle parallax effect to hero section
-    let ticking = false;
-    
-    function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const parallax = document.querySelector('.hero');
-        const speed = scrolled * 0.5;
-        
-        if (parallax) {
-            parallax.style.transform = `translateY(${speed}px)`;
-        }
-        
-        ticking = false;
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    }
-
     window.addEventListener('scroll', requestTick);
 
     // Error handling for external links
