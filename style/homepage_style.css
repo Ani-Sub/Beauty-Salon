@@ -58,22 +58,22 @@ h4 {
 .btn {
   display: inline-block;
   padding: 12px 30px;
-  background: rgba(245, 246, 240, 0.15);
-  color: var(--text-light);
+  background: var(--background-light);
+  color: var(--primary-dark);
   text-decoration: none;
   border-radius: 25px;
   font-weight: 500;
   letter-spacing: 1px;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(245, 246, 240, 0.3);
+  border: 1px solid var(--primary-dark);
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: rgba(245, 246, 240, 0.25);
+  background: var(--primary-light);
+  color: var(--text-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(245, 246, 240, 0.4);
+  border-color: var(--primary-light);
 }
 
 .btn.outline {
@@ -98,7 +98,7 @@ section {
 .hero {
   height: 100vh;
   width: 100%;
-  background: url('../pictures/hero_bg.jpg') center/cover fixed no-repeat;
+  background: var(--primary-color) url('../pictures/hero_bg.png') center/cover fixed no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -114,14 +114,13 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(44, 58, 47, 0.7);
+  background: rgba(44, 58, 47, 0.55);
   z-index: 1;
 }
 
-/* Dark mode overlay adjustment */
 @media (prefers-color-scheme: dark) {
   .hero-overlay {
-    background: rgba(15, 19, 17, 0.8);
+    background: rgba(15, 19, 17, 0.65);
   }
 }
 
@@ -138,7 +137,7 @@ section {
   font-family: var(--font-decorative);
   animation: fadeIn 1s ease-out;
   color: var(--text-light);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .tagline {

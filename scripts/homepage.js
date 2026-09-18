@@ -101,8 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    window.addEventListener('scroll', requestTick);
-
     // Error handling for external links
     const externalLinks = document.querySelectorAll('a[href^="http"]');
     externalLinks.forEach(link => {
