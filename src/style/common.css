@@ -1,50 +1,63 @@
 /* CSS Variables */
 :root {
-    /* Light Mode Colors - Sage Green & Cream */
-    --primary-color: #435946;
-    --primary-dark: #2C3A2F;
-    --primary-light: #5B7161;
-    --accent-color: #9CAF88;
-    --text-light: #F5F6F0;
-    --text-dark: #2C3A2F;
-    --background-light: #F5F6F0;
-    --background-dark: #E8E9E3;
-    
+    --primary-color: #8A9A80;      
+    --primary-dark: #6B7A63;       
+    --primary-light: #A8B89C;      
+    --accent-color: #C9D4B8;       
+    --text-light: #FDFCF7;
+    --text-dark: #4A4A3F;          
+    --background-light: #F5F1E8;   
+    --background-dark: #EDE6D6;    
+
     /* Typography */
     --font-primary: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-secondary: 'Playfair Display', Georgia, serif;
     --font-decorative: 'Dancing Script', cursive;
-    
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
-    
+
     /* Border Radius */
     --border-radius-sm: 5px;
     --border-radius-md: 10px;
     --border-radius-lg: 15px;
     --border-radius-xl: 25px;
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-medium: 0.3s ease;
     --transition-slow: 0.5s ease;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 5px rgba(67, 89, 70, 0.1);
     --shadow-md: 0 4px 10px rgba(67, 89, 70, 0.15);
     --shadow-lg: 0 8px 20px rgba(67, 89, 70, 0.2);
     --shadow-xl: 0 12px 30px rgba(67, 89, 70, 0.25);
-    
+
     /* Z-index layers */
     --z-index-base: 1;
     --z-index-header: 100;
     --z-index-modal: 1000;
     --z-index-overlay: 900;
     --z-index-dropdown: 800;
+}
+
+/* Dark Mode Color Overrides */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #A8B89C;      
+        --primary-dark: #8A9A80;
+        --primary-light: #C9D4B8;
+        --accent-color: #6B7A63;
+        --text-light: #F5F1E8;
+        --text-dark: #E8E4D5;
+        --background-light: #2A2E26;   
+        --background-dark: #1E211B;
+    }
 }
 
 /* Reset and Base Styles */
@@ -265,29 +278,29 @@ button:focus-visible {
     html {
         font-size: 14px;
     }
-    
+
     .nav-container {
         flex-direction: column;
         text-align: center;
         gap: var(--spacing-md);
     }
-    
+
     .nav-links {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
-    
+
     .footer-container {
         flex-direction: column;
         gap: var(--spacing-lg);
         text-align: center;
     }
-    
+
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .copyright {
         margin-left: 0;
     }
@@ -297,12 +310,12 @@ button:focus-visible {
     html {
         font-size: 12px;
     }
-    
+
     .nav-container h1 {
         font-size: 1.8rem;
     }
-    
+
     .btn {
         width: 100%;
     }
-} 
+}
